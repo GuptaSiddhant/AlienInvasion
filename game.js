@@ -65,6 +65,8 @@ var startGame = function () {
             "width": 330, //Integer
             "height": 500, //Integer
             "mobile": true, //Boolean
+            "save": false, //Boolean
+            "score": true, //Boolean
         }
     };
     MessageToParent(message);
