@@ -62,7 +62,7 @@ var startGame = function () {
     message = {
         messageType: "SETTING",
         options: {
-            "width": 350, //Integer
+            "width": 330, //Integer
             "height": 500, //Integer
             "mobile": true, //Boolean
         }
