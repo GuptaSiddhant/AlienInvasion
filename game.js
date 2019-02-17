@@ -209,7 +209,12 @@ var PlayerShip = function () {
         if (Game.keys['fire'] && this.reload < 0) {
             Game.keys['fire'] = false;
             this.reload = this.reloadTime;
-
+            Game.points -= 10;
+            message = {
+                messageType: "SCORE_UPDATE",
+                score: Game.points,
+            };
+            MessageToParent(message);
             this.board.add(new PlayerMissile(this.x, this.y + this.h / 2));
             this.board.add(new PlayerMissile(this.x + this.w, this.y + this.h / 2));
         }
