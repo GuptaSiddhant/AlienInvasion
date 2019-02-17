@@ -302,6 +302,13 @@ Enemy.prototype.hit = function (damage) {
     if (this.health <= 0) {
         if (this.board.remove(this)) {
             Game.points += this.points || 100;
+
+            message = {
+                messageType: "SCORE_UPDATE",
+                score: Game.points,
+            };
+            MessageToParent(message);
+
             this.board.add(new Explosion(this.x + this.w / 2,
                 this.y + this.h / 2));
         }
